@@ -6,6 +6,35 @@
   height: 100%;
 }
 
+.sidebar {
+  margin-top: 6%;
+  border-radius: 10px;
+  border: 1px solid silver;
+  position: fixed;
+  background-color: #39fe90;
+  height: 60%;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 85%;
+}
+
+.sidebar>span {
+  color: black;
+  font-weight: 500;
+  font-size: x-large;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 45px 0;
+  cursor: pointer;
+}
+
+.sidebar>span:hover {
+  background-color: green;
+}
+
 h1 {
   color: black
 }
@@ -13,7 +42,7 @@ h1 {
 .content {
   height: 500px;
   width: 750px;
-  background-color: #f5fffa;
+  background-color: #e8e8e8;
   margin: 5%;
   text-align: center;
 }
