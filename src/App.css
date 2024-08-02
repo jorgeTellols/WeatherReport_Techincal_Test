@@ -1,43 +1,4 @@
-.weather-app {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.sidebar {
-  margin-top: 6%;
-  border-radius: 10px;
-  border: 1px solid silver;
-  position: fixed;
-  background-color: #39fe90;
-  height: 60%;
-  width: 15%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-right: 85%;
-}
-
-.sidebar>span {
-  color: black;
-  font-weight: 500;
-  font-size: x-large;
-  text-align: center;
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 45px 0;
-  cursor: pointer;
-}
-
-.sidebar>span:hover {
-  background-color: green;
-}
-
-h1 {
-  color: black
-}
+/* Body styles */
 
 .content {
   height: 500px;
@@ -46,6 +7,20 @@ h1 {
   margin: 5%;
   text-align: center;
 }
+
+.weather-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+h1 {
+  color: black
+}
+
+/* Language buttons style */
 
 .language-buttons-container {
   margin-top: 4%;
@@ -70,4 +45,122 @@ h1 {
   background-color: #1a1a1a;
   color: white;
   cursor: pointer;
+}
+
+.highlighted-button {
+  background-color: #39fe90;
+  color: black;
+}
+
+/* Sidebar styles */
+
+.sidebar {
+  margin-top: 1%;
+  border-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  position: absolute;
+  background-color: #39fe90;
+  height: 100%;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.sidebar>span {
+  color: black;
+  font-weight: 500;
+  font-size: x-large;
+  text-align: center;
+  border-radius: 10px;
+  padding: 45px 0;
+  cursor: pointer;
+}
+
+.sidebar>span:hover {
+  background-color: #27b164;
+}
+
+.sidebar>p {
+  color: black;
+  font-weight: 500;
+  font-size: medium;
+  text-align: center;
+}
+
+.visible {
+  margin-right: 115%;
+  animation: ShowSidebarAnimation forwards 0.5s;
+}
+
+.not-visible {
+  margin-right: 115%;
+  animation: HideSidebarAnimation forwards 0.5s;
+}
+
+.toggle-sidebar {
+  width: 30%;
+  height: 10%;
+  background-color: #39fe90;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  bottom: 45%;
+  margin-left: 100%;
+  position: absolute;
+}
+
+.toggle-sidebar>h1 {
+  cursor: pointer;
+  height: 80%;
+}
+
+.show {
+  animation: MakeSidebarEyeCatching infinite 1s alternate;
+  margin-top: 50%;
+  margin-right: 15%;
+}
+
+.hide {
+  margin-top: 50%;
+  margin-right: 15%;
+
+}
+
+/* Animations for the sidebar */
+
+@keyframes ShowSidebarAnimation {
+  0% {
+    margin-right: 115%;
+  }
+
+  100% {
+    margin-right: 85%;
+  }
+}
+
+@keyframes HideSidebarAnimation {
+  0% {
+    margin-right: 85%;
+  }
+
+  100% {
+    margin-right: 115%;
+  }
+}
+
+@keyframes MakeSidebarEyeCatching {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.3);
+  }
 }
