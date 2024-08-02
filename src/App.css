@@ -90,6 +90,10 @@ h1 {
   text-align: center;
 }
 
+.first-time {
+  margin-right: 115%
+}
+
 .visible {
   margin-right: 115%;
   animation: ShowSidebarAnimation forwards 0.5s;
