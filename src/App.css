@@ -20,6 +20,100 @@ h1 {
   color: black
 }
 
+/* Modal style */
+
+.modal-background {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  margin-top: 1%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  height: 400px;
+  width: 650px;
+  background-color: #1f2222;
+  position: absolute;
+  z-index: 5;
+  border: solid 3px #39fe90;
+  animation: MakeModalPop ease-out 0.5s;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modal>h1 {
+  text-align: center;
+  color: #39fe90;
+}
+
+/* Form style */
+
+form {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+form>.first-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+form>.second-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+form Button {
+  margin-top: 11%;
+  height: 8%;
+  width: 50%;
+  font-size: 1em;
+  font-family: inherit;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid silver;
+  margin-left: 25%;
+}
+
+form .disabled-button {
+  background-color: grey;
+  color: black;
+}
+
+form .enabled-button {
+  background-color: #39fe90;
+  color: black;
+  cursor: pointer;
+}
+
+label {
+  font-weight: 500;
+  font-style: bold;
+  font-size: large;
+  color: #39fe90;
+}
+
+input {
+  color: black;
+  font-size: large;
+}
+
+.input-style {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Language buttons style */
 
 .language-buttons-container {
@@ -88,6 +182,12 @@ h1 {
   font-weight: 500;
   font-size: medium;
   text-align: center;
+}
+
+.sidebar a {
+  cursor: pointer;
+  text-decoration: underline;
+  color: blue;
 }
 
 .first-time {
@@ -166,5 +266,17 @@ h1 {
 
   100% {
     transform: scale(1.3);
+  }
+}
+
+/* Animations for modal */
+
+@keyframes MakeModalPop {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }

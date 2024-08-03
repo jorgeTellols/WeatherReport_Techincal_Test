@@ -5,8 +5,15 @@ const en = {
     sidebarToronto: "Toronto 🍁",
     sidebarSingapore: "Singapore 🏯",
     sidebarTitle: "Choose a city",
-    sidebarForm: "There is something wrong? Message me ",
-    sidebarFormLink: "here"
+    sidebarForm: "Something's wrong? Leave your contact ",
+    sidebarFormLink: "here",
+    formTitle: "Leave here your contact",
+    formName: "Name",
+    formEmail: "Email",
+    formCity: "City",
+    formBirthdate: "Birthdate",
+    formPhoneNumber: "Phone number",
+    formSubmitButton: "Submit"
 
 }
 
