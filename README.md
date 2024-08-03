@@ -27,9 +27,9 @@ This is a single page site, so eveything has its root on App.css. You can reach 
 
 I tried to be "clear" while I was coding this app but here is the syntax I used to organize myself:
 
-C = component
-W = widget
-m = modal
+- C = component
+- W = widget
+- M = modal
 
 All the style can be found in "App.css", to make is easy the reading of it I separated eveything in sections with comments.
 
