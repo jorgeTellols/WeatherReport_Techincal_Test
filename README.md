@@ -9,7 +9,7 @@ This is a very simple application to check the weather report from 3 random citi
 ## What can you do?
 
 - Check the weather, temperature, wind speed, humidity and atmospheric pressure from 3 cities on the current day.
-- Check the weather, average temperature and rain probability of the this same city within the next 6 days.
+- Check the weather, average temperature and rain probability of this same city within the next 6 days.
 - Switch between languages (The site is fully in English and Spanish)
 - Leave me your contact through a form (the submit button is not functional).
 
