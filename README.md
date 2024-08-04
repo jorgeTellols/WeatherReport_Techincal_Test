@@ -1,9 +1,39 @@
 # Weather Report app
 
-Important: This app is a technical test.
+IMPORTANT: This app is a technical test.
 
-This is a very simple application to check the weather report from 3 random cities (you can select them from the sidebar). You can also switch language (English and Spanish) and access a form to message me anything (the form is not functional, only a design as I was told to do).
+## What's this?
 
-Made with ReactJS and native JavaScript, HTML and CSS. No frameworks used.
+This is a very simple application to check the weather report from 3 random cities. 
+
+## What can you do?
+
+- Check the weather, temperature and rain probability from a random city (pick them from the left sidebar) on the current day and the next 5.
+- Switch between languages (The site is fully in ENglish and Spanish)
+- Leave me your contact through a form to be able reach you in the future (the submit button is not functional).
+
+## Technologies used
+
+- React 
+- JavaScript
+- HTML
+- CSS
+
+No frameworks used (technically React is a library hehe).
+
+## How do I navigate through the files?
+
+This is a single page site, so eveything has its root on App.css. You can reach anything from there.
+
+I tried to be "clear" while I was coding this app but here is the syntax I used to organize myself:
+
+- C = component
+- W = widget
+- M = modal
+
+All the style can be found in "App.css", to make is easy the reading of it I separated eveything in sections with comments.
+
+
+
 
 
