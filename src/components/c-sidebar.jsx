@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState} from "react";
+import Button from "./c-button";
 
 function Sidebar(props) {
 
@@ -23,9 +24,9 @@ function Sidebar(props) {
                 (
                     <div className={`${isVisible ? "visible" : "not-visible"} sidebar`}>
                         <h1>{(props.languageSelected).sidebarTitle}</h1>
-                        <span>{(props.languageSelected).sidebarLondon}</span>
-                        <span>{(props.languageSelected).sidebarToronto}</span>
-                        <span>{(props.languageSelected).sidebarSingapore}</span>
+                        <Button handleClick={props.handleClickLondon} textContent={(props.languageSelected).sidebarLondon}></Button>
+                        <Button textContent={(props.languageSelected).sidebarToronto}></Button>
+                        <Button textContent={(props.languageSelected).sidebarSingapore}></Button>
                         <p>{(props.languageSelected).sidebarForm}<a onClick={props.showModal}>{(props.languageSelected).sidebarFormLink}</a></p>
                         
                         <div className="toggle-sidebar" onClick={() => setIsVisible(!isVisible)}>

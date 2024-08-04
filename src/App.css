@@ -3,9 +3,26 @@
 .content {
   height: 500px;
   width: 750px;
-  background-color: #e8e8e8;
+  /* background-color: rgb(209, 209, 190); */
+  background-color: #66d195;
   margin: 5%;
   text-align: center;
+  border-radius: 30px;
+}
+
+.emoji {
+  height: 40%;
+  width: 30%;
+  opacity: 0.6;
+}
+
+.empty-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .weather-app {
@@ -14,10 +31,6 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-}
-
-h1 {
-  color: black
 }
 
 /* Modal style */
@@ -163,7 +176,7 @@ input {
   text-align: center;
 }
 
-.sidebar>span {
+.sidebar>Button {
   color: black;
   font-weight: 500;
   font-size: x-large;
@@ -171,9 +184,11 @@ input {
   border-radius: 10px;
   padding: 45px 0;
   cursor: pointer;
+  background-color: #39fe90;
+  border: 0px;
 }
 
-.sidebar>span:hover {
+.sidebar>Button:hover {
   background-color: #27b164;
 }
 
@@ -236,6 +251,115 @@ input {
   margin-right: 15%;
 
 }
+
+/* Weather widget style */
+
+.weather-widget {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.weather-widget>.first-row {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black
+}
+
+
+.weather-widget>.second-row {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid black
+}
+
+.location-date {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid black
+}
+
+.date {
+  font-size: larger
+}
+
+
+/* Weather cards style */
+
+.weather-card,
+.mini-weather-card {
+  border-left: 1px solid black;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weather-card>.first-row,
+.weather-card>.second-row {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.weather-card>.second-row {
+  height: 70%;
+}
+
+.pressure {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.wind-speed {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.humidity {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.weather-card .second-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: black;
+  font-weight: 500;
+  justify-content: space-evenly;
+}
+
+/* Mini weather cards style */
 
 /* Animations for the sidebar */
 

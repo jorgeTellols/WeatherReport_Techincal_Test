@@ -13,7 +13,8 @@ const es = {
     formCity: "Ciudad",
     formBirthdate: "Fecha de nacimiento",
     formPhoneNumber: "Telefono",
-    formSubmitButton: "Enviar"
+    formSubmitButton: "Enviar",
+    dataFormat: "es-ES",
 }
 
 export default es;
