@@ -14,6 +14,8 @@ const en = {
     formBirthdate: "Birthdate",
     formPhoneNumber: "Phone number",
     formSubmitButton: "Submit",
+    emptyContentTitle: "Looks like you haven't selected a city yet",
+    emptyContentSpan: "Please, pick a city from the sidebar",
     dataFormat: "en-US",
 }
 

@@ -14,6 +14,8 @@ const es = {
     formBirthdate: "Fecha de nacimiento",
     formPhoneNumber: "Telefono",
     formSubmitButton: "Enviar",
+    emptyContentTitle: "Parece que aún no has seleccionado ciudad",
+    emptyContentSpan: "Por favor, elige una ciudad de la barra lateral",
     dataFormat: "es-ES",
 }
 

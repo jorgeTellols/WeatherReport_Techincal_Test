@@ -8,13 +8,18 @@ function WeatherCard(props)
     const [currentPressure, setCurrentPressure] = useState("");
     const [currentWindSpeed, setCurrentWindSpeed] = useState("");
     const [currentHumidity, setCurrentHumidity] = useState("");
-    // const [selectedCity, setSelectedCity] = useState("");
+    const [selectedCityName, setSelectedCityName] = useState("");
 
-    // useEffect(() => setSelectedCity(props.selectedCity), [selectedCity]);
+    // useEffect(() => {
+    //     setSelectedCityName(props.selectedCityName)
+    // }, [props.selectedCityName]);
 
     function getTodaysWeatherReport()
     {
+        
         const url = "https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&exclude=hourly,minutely,alerts&units=metric&appid=0ff9464f3fd2c42db59ce520cd7dd451"    
+        // const TorontoUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=43.65&lon=79.38&exclude=minutely,hourly,alerts&units=metric&appid=0ff9464f3fd2c42db59ce520cd7dd451"
+        // const SingaporeUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=1,29&lon=103,85&exclude=minutely,hourly,alerts&units=metric&appid=0ff9464f3fd2c42db59ce520cd7dd451"    
     
         fetch(url)
         .then(response => 

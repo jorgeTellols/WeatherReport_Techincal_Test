@@ -24,13 +24,27 @@ function Sidebar(props) {
                 (
                     <div className={`${isVisible ? "visible" : "not-visible"} sidebar`}>
                         <h1>{(props.languageSelected).sidebarTitle}</h1>
-                        <Button handleClick={props.handleClickLondon} textContent={(props.languageSelected).sidebarLondon}></Button>
-                        <Button textContent={(props.languageSelected).sidebarToronto}></Button>
-                        <Button textContent={(props.languageSelected).sidebarSingapore}></Button>
+                        <Button 
+                            handleClick={props.handleClickLondon} 
+                            textContent={(props.languageSelected).sidebarLondon}>
+                        </Button>
+                        <Button 
+                            handleClick={props.handleClickToronto} 
+                            textContent={(props.languageSelected).sidebarToronto}>
+                        </Button>
+                        <Button 
+                            handleClick={props.handleClickSingapore} 
+                            textContent={(props.languageSelected).sidebarSingapore}>
+                        </Button>
                         <p>{(props.languageSelected).sidebarForm}<a onClick={props.showModal}>{(props.languageSelected).sidebarFormLink}</a></p>
-                        
                         <div className="toggle-sidebar" onClick={() => setIsVisible(!isVisible)}>
-                            {isVisible ? (<h1 className="hide">🌏</h1>) : (<h1 className="show">🌏</h1>)}
+                            {isVisible ? 
+                            (
+                                <h1 className="hide">🌏</h1>
+                            ) : 
+                            (
+                                <h1 className="show">🌏</h1>
+                            )}
                         </div>
                     </div>
                 )

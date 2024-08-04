@@ -1,27 +1,42 @@
+/* eslint-disable react/prop-types */
 import WeatherCard from "../components/c-weatherCard";
 import MiniWeatherCard from "../components/c-miniWeatherCard";
 import { useEffect, useState } from "react";
 
 function WeatherReport(props) {
 
-    // eslint-disable-next-line react/prop-types
-    const date = new Date().toLocaleDateString(`${(props.languageSelected).dataFormat}`, { timeZone: "America/Chicago", weekday:"long", year:"numeric", month:"long", day:"numeric"})
-    const upperCaseDate = date.charAt(0).toUpperCase() + date.slice(1);
-    const [selectedCity, setSelectedCity] = useState("");
-
-    useEffect(() => {mostrar}, [])
-
-        function mostrar()
+    const [timeZone, setTimeZone] = useState("");
+    const [selectedCityName, setSelectedCityName] = useState("");
+    const [currentDate, setCurrentDate] = useState("");
+    
+    useEffect(() => {
+        setSelectedCityName(props.selectedCityName)
+        if(props.selectedCityName == "London")
         {
-            console.log(props.selectedCityName);
+            setTimeZone("America/Chicago")
         }
+        else if(props.selectedCityName == "Toronto")
+        {
+            setTimeZone("Asia/Almaty")
+        }
+        else if(props.selectedCityName == "Singapore")
+        {
+            setTimeZone("Asia/Singapore")
+        }
+        }, [props.selectedCityName]);
 
-    return(
+        useEffect(() => setCurrentDate(new Date().toLocaleDateString(`${(props.languageSelected).dataFormat}`, { timeZone: timeZone, weekday:"long", year:"numeric", month:"long", day:"numeric"})), [timeZone])
+            
+        const upperCaseDate = currentDate.charAt(0).toUpperCase() + currentDate.slice(1);
+        //const upperCaseDate = "patata"
+
+        
+        return(
         <div className="weather-widget">
             <div className="first-row">
-                <WeatherCard selectedCityName={selectedCity}></WeatherCard>
+                <WeatherCard selectedCityName={selectedCityName}></WeatherCard>
                 <div className="location-date">
-                    <h1>London 💂🏻‍♀️</h1>
+                    <h1>{selectedCityName}</h1>
                     <h1 className="date">{upperCaseDate}</h1>
                 </div>
             </div>

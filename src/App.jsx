@@ -11,30 +11,52 @@ function App() {
 
   const [languageSelected, setLanguageSelected] = useState(en)
   const [isFormShowing, setIsFormShowing] = useState(false);
-  const [citySelected, setCitySelected] = useState(false);
-  const [selectedCityName, setSelectedCityMame] = useState("");
-
+  const [selectedCityName, setSelectedCityName] = useState("");
 
   return (
       <div className="weather-app">
-        <Sidebar handleClickLondon={() => setSelectedCityName("London")} showModal={() => setIsFormShowing(true)} languageSelected={languageSelected}></Sidebar>
+        <Sidebar 
+          handleClickSingapore={() => {setSelectedCityName("Singapore")}} 
+          handleClickToronto={() => setSelectedCityName("Toronto")} 
+          handleClickLondon={() => setSelectedCityName("London")} 
+          showModal={() => setIsFormShowing(true)} 
+          languageSelected={languageSelected}>
+        </Sidebar>
         <div className="language-buttons-container">
-          <Button buttonType="button" styleButton="language-button" isSelected={languageSelected == en ? "highlighted-button" : ""} handleClick={() => setLanguageSelected(en)} textContent={languageSelected.englishLanguage}></Button>
-          <Button buttonType="button" styleButton="language-button" isSelected={languageSelected == es ? "highlighted-button" : ""} handleClick={() => setLanguageSelected(es)} textContent={languageSelected.spanishLanguage}></Button>
+          <Button 
+            buttonType="button" 
+            styleButton="language-button" 
+            isSelected={languageSelected == en ? "highlighted-button" : ""} 
+            handleClick={() => setLanguageSelected(en)} 
+            textContent={languageSelected.englishLanguage}>
+          </Button>
+          <Button 
+            buttonType="button" 
+            styleButton="language-button" 
+            isSelected={languageSelected == es ? "highlighted-button" : ""} 
+            handleClick={() => setLanguageSelected(es)} 
+            textContent={languageSelected.spanishLanguage}>
+          </Button>
         </div>
         <div className="content">
-          {citySelected ? (
-            <WeatherReport selectedCityName={selectedCityName} languageSelected={languageSelected}></WeatherReport>
+          {selectedCityName !== "" ? (
+            <WeatherReport 
+              selectedCityName={selectedCityName} 
+              languageSelected={languageSelected}>
+            </WeatherReport>
           ) : (
             <div className="empty-content">
               <img className="emoji" src="../public/assets/74Uy.gif"/>
-              <h1>Looks like you haven{"'"}t selected a city to check </h1>
-              <p>Please, pick a city from the sidebar</p>
+              <h1>{languageSelected.emptyContentTitle} </h1>
+              <span>{languageSelected.emptyContentSpan}</span>
             </div>
           )}
         </div>
         {isFormShowing ? (
-                <Form languageSelected={languageSelected} hideModal={() => setIsFormShowing(false)}></Form>
+                <Form 
+                  languageSelected={languageSelected} 
+                  hideModal={() => setIsFormShowing(false)}>
+                </Form>
         ) : ""}
       </div>
   )
