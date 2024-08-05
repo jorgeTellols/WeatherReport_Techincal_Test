@@ -17,6 +17,14 @@ const en = {
     emptyContentTitle: "Looks like you haven't selected a city yet",
     emptyContentSpan: "Please, pick a city from the sidebar",
     dataFormat: "en-US",
+    rainProbSpan: "Rain probability",
+    windSpeedSpan: "Wind speed",
+    humiditySpan: "Humidity",
+    serverErrorMessage: "Server error",
+    clientErrorMessage: "Client error",
+    serverErrorTip: "Please try again later",
+    clientErrorTip: "Please try again later",
+
 }
 
 export default en;

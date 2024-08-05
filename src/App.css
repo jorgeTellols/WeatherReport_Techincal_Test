@@ -3,17 +3,31 @@
 .content {
   height: 500px;
   width: 750px;
-  /* background-color: rgb(209, 209, 190); */
   background-color: #66d195;
   margin: 5%;
   text-align: center;
   border-radius: 30px;
 }
 
+.london {
+  background: url("../public/assets/london.jpg");
+  background-size: cover
+}
+
+.singapore {
+  background: url("../public/assets/singapore.jpg");
+  background-size: cover
+}
+
+.toronto {
+  background: url("../public/assets/toronto.jpg");
+  background-size: cover;
+}
+
 .emoji {
   height: 40%;
   width: 30%;
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .empty-content {
@@ -254,6 +268,10 @@ input {
 
 /* Weather widget style */
 
+WeatherReport>.London {
+  background-color: black
+}
+
 .weather-widget {
   height: 100%;
   width: 100%;
@@ -269,7 +287,6 @@ input {
   justify-content: space-between;
   border-bottom: 1px solid black
 }
-
 
 .weather-widget>.second-row {
   height: 100%;
@@ -293,6 +310,14 @@ input {
   font-size: larger
 }
 
+.server-error,
+.client-error {
+  height: 500px;
+  width: 750px;
+  background-color: #66d195 !important;
+  text-align: center;
+  border-radius: 30px;
+}
 
 /* Weather cards style */
 
@@ -314,6 +339,10 @@ input {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.weather-card>.first-row>h1 {
+  font-size: 7vh;
 }
 
 .weather-card>.second-row {
@@ -360,6 +389,37 @@ input {
 }
 
 /* Mini weather cards style */
+
+.mini-weather-card {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.mini-weather-card h1 {
+  font-size: small;
+}
+
+.mini-weather-card>.second-row {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.rain-prob,
+.temperature {
+  display: flex;
+  flex-direction: column;
+}
+
+.rain-prob span,
+.temperature span {
+  font-weight: 500;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 /* Animations for the sidebar */
 

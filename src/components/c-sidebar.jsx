@@ -7,6 +7,11 @@ function Sidebar(props) {
     const [isVisible, setIsVisible] = useState(false)
     const [firstTime, setFirstTime] = useState(true);
 
+    const handleClick = (prop) => {
+        prop();
+        setIsVisible(false);
+    };
+
     return (
         <>
             {firstTime ? 
@@ -25,15 +30,16 @@ function Sidebar(props) {
                     <div className={`${isVisible ? "visible" : "not-visible"} sidebar`}>
                         <h1>{(props.languageSelected).sidebarTitle}</h1>
                         <Button 
-                            handleClick={props.handleClickLondon} 
-                            textContent={(props.languageSelected).sidebarLondon}>
+                            handleClick={() => handleClick(props.handleClickLondon)} 
+                            textContent={(props.languageSelected).sidebarLondon}
+                            >
                         </Button>
                         <Button 
-                            handleClick={props.handleClickToronto} 
+                            handleClick={() => handleClick(props.handleClickToronto)} 
                             textContent={(props.languageSelected).sidebarToronto}>
                         </Button>
                         <Button 
-                            handleClick={props.handleClickSingapore} 
+                            handleClick={() => handleClick(props.handleClickSingapore)} 
                             textContent={(props.languageSelected).sidebarSingapore}>
                         </Button>
                         <p>{(props.languageSelected).sidebarForm}<a onClick={props.showModal}>{(props.languageSelected).sidebarFormLink}</a></p>
