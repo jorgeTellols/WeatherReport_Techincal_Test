@@ -9,14 +9,15 @@ function WeatherReport(props) {
 
     //Objects initialization section 
 
+    let language = "";
+
     const weather = {
         "date": "",
         "icon": "",
         "description": "",
         "temperature": 0,
-        "rainProb": 0,
-        "windSpeed": 0,
-        "humidity": 0,
+        "tempMax": 0,
+        "tempMin": 0,
         "timeZone": ""
     }
 
@@ -47,16 +48,17 @@ function WeatherReport(props) {
     }, [props.selectedCityName]);
 
     useEffect(() => {
-        //getWeatherReport()
+        if((props.languageSelected).dataFormat == "en-US")
+            {
+                language = "en"
+            }
+            else{
+                
+                language = "es"
+            }
+        getWeatherReport()
         setCityChanged(false);
-    }, [cityChanged])
-
-    //Function to get a more readable wind speed format
-
-    function convertToKmPerHour(metersPerSecond)
-    {
-        return Math.round((metersPerSecond * 3.6));
-    }
+    }, [cityChanged, props.languageSelected])
 
     //Function format the date
 
@@ -91,7 +93,7 @@ function WeatherReport(props) {
     function formatTime(dt)
     {
         const date = new Date(dt * 1000);
-         return date.toLocaleTimeString(`${(props.languageSelected).dataFormat}`, 
+        return date.toLocaleTimeString(`${(props.languageSelected).dataFormat}`, 
         { 
             timeZone: currentWeather.timeZone, 
             hour: '2-digit',
@@ -115,15 +117,15 @@ function WeatherReport(props) {
             
             if((cityName == "London 💂🏻‍♀️") || (cityName == "Londres 💂🏻‍♀️")) 
             {
-                url = "https://api.openweathermap.org/data/3.0/onecall?lat=51.50&lon=-0.11&exclude=minutely,alerts&units=metric&appid=2b86aec52c83a8cee2493754f4579d58";
+                url = `https://api.openweathermap.org/data/3.0/onecall?lat=51.50&lon=-0.11&exclude=minutely,alerts&lang=${language}&units=metric&appid=2b86aec52c83a8cee2493754f4579d58`;
             } 
             else if(cityName == "Toronto 🍁") 
             {
-                url = "https://api.openweathermap.org/data/3.0/onecall?lat=43.65&lon=-79.34&exclude=minutely,alerts&units=metric&appid=2b86aec52c83a8cee2493754f4579d58";
+                url = `https://api.openweathermap.org/data/3.0/onecall?lat=43.65&lon=-79.34&exclude=minutely,alerts&lang=${language}&units=metric&appid=2b86aec52c83a8cee2493754f4579d58`;
             } 
             else if((cityName == "Singapore 🏯") || (cityName == "Singapur 🏯")) 
             {
-                url = "https://api.openweathermap.org/data/3.0/onecall?lat=1.29&lon=103.85&exclude=minutely,alerts&units=metric&appid=2b86aec52c83a8cee2493754f4579d58";
+                url = `https://api.openweathermap.org/data/3.0/onecall?lat=1.29&lon=103.85&exclude=minutely,alerts&lang=${language}&units=metric&appid=2b86aec52c83a8cee2493754f4579d58`;
             } 
 
             //GET
@@ -149,10 +151,13 @@ function WeatherReport(props) {
                 weather.icon = (data.current.weather[0].icon);
                 weather.description = (data.current.weather[0].description);
                 weather.temperature = (data.current.temp);
-                weather.rainProb = (data.hourly[0].pop);
-                weather.humidity = (data.current.humidity);
-                weather.windSpeed = (data.current.wind_speed);
+                weather.tempMax = (data.daily[0].temp.max);
+                weather.rainProb = (data.daily[0].pop)
+                weather.tempMin = (data.daily[0].temp.min);
                 weather.timeZone = (data.timezone);
+
+                weather.description = (weather.description).charAt(0).toUpperCase() + (weather.description).slice(1);
+
 
                 //Loop to GET the weather for the next 6 days
 
@@ -237,9 +242,9 @@ function WeatherReport(props) {
                             weatherIcon={currentWeather.icon}
                             weatherDescription={currentWeather.description}
                             weatherTemperature={Math.round(currentWeather.temperature)}
-                            weatherRainProb={Math.round((currentWeather.rainProb)*100)}
-                            weatherWindSpeed={convertToKmPerHour(currentWeather.windSpeed)}
-                            weatherHumidity={currentWeather.humidity}
+                            weatherTempMax={Math.round(currentWeather.tempMax)}
+                            weatherRainProb={(currentWeather.rainProb)*100}
+                            weatherTempMin={Math.round(currentWeather.tempMin)}
                         ></WeatherCard>
                         <CityInfoWeatherCard 
                             languageSelected={props.languageSelected}

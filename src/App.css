@@ -356,8 +356,24 @@ WeatherReport>.London {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-;
   align-items: center;
+}
+
+.icon-description {
+  display: flex;
+  color: black;
+  align-items: center;
+  font-weight: 500;
+  height: 100%;
+  width: 100%;
+  font-size: 1vw;
+}
+
+.icon-description>.first-row {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30%;
 }
 
 .weather-card {
@@ -367,7 +383,6 @@ WeatherReport>.London {
   border-bottom-right-radius: 0;
 }
 
-.weather-card>.first-row,
 .weather-card>.second-row {
   height: 100%;
   width: 100%;
@@ -386,18 +401,10 @@ WeatherReport>.London {
   justify-content: space-around;
 }
 
-.weather-card img {
-  height: 100%;
-  max-width: 50%;
-}
 
 .weather-card>.second-row img {
   height: 6vh;
   width: 7vh;
-}
-
-.weather-card>.first-row>h1 {
-  font-size: 7vh;
 }
 
 .weather-card>.second-row span {
@@ -405,8 +412,8 @@ WeatherReport>.London {
 }
 
 .weather-card .rain-prob,
-.wind-speed,
-.humidity {
+.min-temp,
+.max-temp {
   height: 100%;
   width: 100%;
   border: 0.1vw solid #1f2222;
@@ -417,16 +424,16 @@ WeatherReport>.London {
 }
 
 
-.humidity {
-  border-radius: 0;
+.max-temp {
+  border-bottom-left-radius: 20%;
 }
 
 .rain-prob {
-  border-bottom-left-radius: 20%;
+  border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.wind-speed {
+.min-temp {
   border-right-width: 0;
 }
 
