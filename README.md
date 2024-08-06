@@ -21,7 +21,7 @@ This is a very simple application to check the weather report from 3 random citi
 - HTML
 - CSS
 
-No frameworks used (technically React is a library hehe).
+No frameworks used (technically React is a library ☝️🤓).
 
 ## How do I navigate through the files?
 
