@@ -15,12 +15,13 @@ This is a very simple application to check the weather report from 3 random citi
 
 ## Technologies used
 
+- NodeJS v20.16.0
 - React 
 - JavaScript
 - HTML
 - CSS
 
-No frameworks used (technically React is a library hehe).
+No frameworks used (technically React is a library ☝️🤓).
 
 ## How do I navigate through the files?
 
