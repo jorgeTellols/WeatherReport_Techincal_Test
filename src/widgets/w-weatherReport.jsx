@@ -48,7 +48,7 @@ function WeatherReport(props) {
     }, [props.selectedCityName]);
 
     useEffect(() => {
-        //getWeatherReport()
+        getWeatherReport()
         setCityChanged(false);
     }, [cityChanged, props.languageSelected])
 
