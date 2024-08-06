@@ -24,7 +24,6 @@ const en = {
     clientErrorMessage: "Client error",
     serverErrorTip: "Please try again later",
     clientErrorTip: "Please try again later",
-
 }
 
 export default en;

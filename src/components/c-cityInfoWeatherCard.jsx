@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 function CityInfoWeatherCard(props){
     
+    //Made this to make sure that the first letter of the displayed day is in upper case.
     const upperCaseDate = props.date.charAt(0).toUpperCase() + props.date.slice(1);
     
     return (               

@@ -1,5 +1,5 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import WeatherCard from "../components/c-weatherCard";
 import MiniWeatherCard from "../components/c-miniWeatherCard";
 import CityInfoWeatherCard from "../components/c-cityInfoWeatherCard";
@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 function WeatherReport(props) {
 
-    //Variable initialization section 
+    //Objects initialization section 
 
     const weather = {
         "date": "",
@@ -27,7 +27,7 @@ function WeatherReport(props) {
         "rainProb": "",
     }
 
-    //Hook initialization section
+    //Hook section
 
     const [clientError, setClientError] = useState(false);
     const [serverError, setServerError] = useState(false);
@@ -115,15 +115,15 @@ function WeatherReport(props) {
             
             if((cityName == "London 💂🏻‍♀️") || (cityName == "Londres 💂🏻‍♀️")) 
             {
-                url = "https://api.openweathermap.org/data/3.0/onecall?lat=51.50&lon=-0.11&exclude=hourly,minutely,alerts&units=metric&appid=2b86aec52c83a8cee2493754f4579d58";
+                url = "https://api.openweathermap.org/data/3.0/onecall?lat=51.50&lon=-0.11&exclude=minutely,alerts&units=metric&appid=2b86aec52c83a8cee2493754f4579d58";
             } 
             else if(cityName == "Toronto 🍁") 
             {
-                url = "https://api.openweathermap.org/data/3.0/onecall?lat=43.65&lon=-79.34&exclude=minutely,hourly,alerts&units=metric&appid=2b86aec52c83a8cee2493754f4579d58";
+                url = "https://api.openweathermap.org/data/3.0/onecall?lat=43.65&lon=-79.34&exclude=minutely,alerts&units=metric&appid=2b86aec52c83a8cee2493754f4579d58";
             } 
             else if((cityName == "Singapore 🏯") || (cityName == "Singapur 🏯")) 
             {
-                url = "https://api.openweathermap.org/data/3.0/onecall?lat=1.29&lon=103.85&exclude=minutely,hourly,alerts&units=metric&appid=2b86aec52c83a8cee2493754f4579d58";
+                url = "https://api.openweathermap.org/data/3.0/onecall?lat=1.29&lon=103.85&exclude=minutely,alerts&units=metric&appid=2b86aec52c83a8cee2493754f4579d58";
             } 
 
             //GET
@@ -149,7 +149,7 @@ function WeatherReport(props) {
                 weather.icon = (data.current.weather[0].icon);
                 weather.description = (data.current.weather[0].description);
                 weather.temperature = (data.current.temp);
-                weather.rainProb = (data.daily[0].pop);
+                weather.rainProb = (data.hourly[0].pop);
                 weather.humidity = (data.current.humidity);
                 weather.windSpeed = (data.current.wind_speed);
                 weather.timeZone = (data.timezone);
@@ -237,7 +237,7 @@ function WeatherReport(props) {
                             weatherIcon={currentWeather.icon}
                             weatherDescription={currentWeather.description}
                             weatherTemperature={Math.round(currentWeather.temperature)}
-                            weatherRainProb={currentWeather.rainProb*100}
+                            weatherRainProb={Math.round((currentWeather.rainProb)*100)}
                             weatherWindSpeed={convertToKmPerHour(currentWeather.windSpeed)}
                             weatherHumidity={currentWeather.humidity}
                         ></WeatherCard>
@@ -250,6 +250,7 @@ function WeatherReport(props) {
                     </div>
                     <div className="second-row">
                         <MiniWeatherCard
+                            minicardPosition="first-mini-card"
                             languageSelected={props.languageSelected}
                             weatherIcon={weatherDay1.icon}
                             weatherTemperature={Math.round(weatherDay1.temperature)}
@@ -285,6 +286,7 @@ function WeatherReport(props) {
                             date={formatDate(weatherDay5.date, true)}
                         />
                         <MiniWeatherCard
+                            minicardPosition="last-mini-card"
                             languageSelected={props.languageSelected}
                             weatherIcon={weatherDay6.icon}
                             weatherTemperature={Math.round(weatherDay6.temperature)}

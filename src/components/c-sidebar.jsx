@@ -4,9 +4,11 @@ import Button from "./c-button";
 
 function Sidebar(props) {
 
+    //Hook initialization
     const [isVisible, setIsVisible] = useState(false)
     const [firstTime, setFirstTime] = useState(true);
 
+    //This constant allows me to change the state of "isVisible" and use the prop given by the father component 
     const handleClick = (prop) => {
         prop();
         setIsVisible(false);

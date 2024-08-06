@@ -1,12 +1,12 @@
 /* Body styles */
 
 .content {
-  height: 500px;
-  width: 750px;
+  height: 65vh;
+  width: 50vw;
   background-color: #66d195;
   margin: 5%;
   text-align: center;
-  border-radius: 30px;
+  border-radius: 5%;
 }
 
 .london {
@@ -37,6 +37,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 1vw;
 }
 
 .weather-app {
@@ -52,24 +53,23 @@
 .modal-background {
   background-color: rgba(0, 0, 0, 0.8);
   position: absolute;
-  height: 100vh;
-  width: 100vw;
-  margin-top: 1%;
-  z-index: 1;
+  height: 100%;
+  width: 100%;
+  margin-top: 0.5%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .modal {
-  height: 400px;
-  width: 650px;
+  height: 45vh;
+  width: 65vh;
   background-color: #1f2222;
   position: absolute;
   z-index: 5;
-  border: solid 3px #39fe90;
+  border: solid 0.5vh #39fe90;
   animation: MakeModalPop ease-out 0.5s;
-  border-radius: 10px;
+  border-radius: 2%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -77,6 +77,7 @@
 
 .modal>h1 {
   text-align: center;
+  font-size: 2vw;
   color: #39fe90;
 }
 
@@ -101,16 +102,19 @@ form>.second-row {
   justify-content: space-evenly;
 }
 
-form Button {
-  margin-top: 11%;
+.form-button {
+  margin-top: 15%;
   height: 8%;
   width: 50%;
-  font-size: 1em;
+  font-size: 1vw;
   font-family: inherit;
   font-weight: 500;
-  border-radius: 8px;
-  border: 1px solid silver;
+  border-radius: 8vw;
+  border: 0.1vw solid silver;
   margin-left: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 form .disabled-button {
@@ -127,16 +131,21 @@ form .enabled-button {
 label {
   font-weight: 500;
   font-style: bold;
-  font-size: large;
+  font-size: 1vw;
   color: #39fe90;
 }
 
 input {
   color: black;
-  font-size: large;
+  font-size: 1vw;
+  border-width: 0;
+  outline: none;
+  background-color: white;
 }
 
 .input-style {
+  color: black;
+  font-size: 1vw;
   display: flex;
   flex-direction: column;
 }
@@ -145,9 +154,10 @@ input {
 
 .language-buttons-container {
   margin-top: 4%;
-  width: fit-content;
+  height: 5vh;
+  width: 100%;
   display: flex;
-  margin-left: auto;
+  justify-content: right;
 }
 
 .language-button:hover {
@@ -156,14 +166,14 @@ input {
 }
 
 .language-button {
-  border-radius: 8px;
-  border: 1px solid silver;
+  background-color: #1a1a1a;
+  border: 0.1vw solid silver;
+  border-radius: 15%;
   padding: 0.6em 1.2em;
-  font-size: 1em;
-  margin-right: 30px;
+  margin-right: 2vw;
+  font-size: 1vw;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   color: white;
   cursor: pointer;
 }
@@ -176,14 +186,14 @@ input {
 /* Sidebar styles */
 
 .sidebar {
-  margin-top: 1%;
-  border-radius: 10px;
-  border-bottom-left-radius: 0px;
-  border-top-left-radius: 0px;
-  position: absolute;
+  top: 0;
+  border-radius: 1%;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  position: fixed;
   background-color: #39fe90;
-  height: 100%;
-  width: 15%;
+  height: 100vh;
+  width: 15vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -193,23 +203,27 @@ input {
 .sidebar>Button {
   color: black;
   font-weight: 500;
-  font-size: x-large;
+  font-size: 3.5vh;
   text-align: center;
-  border-radius: 10px;
-  padding: 45px 0;
+  border-radius: 1%;
+  padding: 25% 0;
   cursor: pointer;
   background-color: #39fe90;
-  border: 0px;
+  border: 0;
 }
 
 .sidebar>Button:hover {
   background-color: #27b164;
 }
 
+.sidebar>h1 {
+  font-size: 4vh;
+}
+
 .sidebar>p {
   color: black;
   font-weight: 500;
-  font-size: medium;
+  font-size: 2vh;
   text-align: center;
 }
 
@@ -237,8 +251,8 @@ input {
   width: 30%;
   height: 10%;
   background-color: #39fe90;
-  border-top-right-radius: 100px;
-  border-bottom-right-radius: 100px;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -251,6 +265,7 @@ input {
 
 .toggle-sidebar>h1 {
   cursor: pointer;
+  font-size: 4vh;
   height: 80%;
 }
 
@@ -263,7 +278,6 @@ input {
 .hide {
   margin-top: 50%;
   margin-right: 15%;
-
 }
 
 /* Weather widget style */
@@ -285,7 +299,6 @@ WeatherReport>.London {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid black
 }
 
 .weather-widget>.second-row {
@@ -293,7 +306,6 @@ WeatherReport>.London {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid black
 }
 
 .location-date {
@@ -303,33 +315,55 @@ WeatherReport>.London {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-left: 1px solid black
+  border: 0.1vw solid #1f2222;
+  border-left-color: #1f2222;
+  border-left-width: 0;
+  border-top-width: 0;
+  border-right-color: #1f2222;
+  border-bottom-right-radius: 10%;
+  border-bottom-width: 2%;
+  font-size: 1vw;
 }
 
 .date {
-  font-size: larger
+  font-size: 1vw;
 }
 
 .server-error,
 .client-error {
-  height: 500px;
-  width: 750px;
-  background-color: #66d195 !important;
+  height: 65vh;
+  width: 50vw;
+  background-color: #45d09d !important;
   text-align: center;
-  border-radius: 30px;
+  border-radius: 5%;
+}
+
+.server-error img,
+.client-error img {
+  height: 50%;
+  width: 50%;
 }
 
 /* Weather cards style */
 
 .weather-card,
 .mini-weather-card {
-  border-left: 1px solid black;
+  border: 0.1vw solid black;
+  border-radius: 8%;
+  border-top-right-radius: 0;
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
+}
+
+.weather-card {
+  border-top-width: 0;
+  border-right-width: 2%;
+  border-bottom-width: 2%;
+  border-bottom-right-radius: 0;
 }
 
 .weather-card>.first-row,
@@ -341,52 +375,60 @@ WeatherReport>.London {
   align-items: center;
 }
 
-.weather-card>.first-row>h1 {
-  font-size: 7vh;
-}
-
-.weather-card>.second-row {
-  height: 70%;
-}
-
-.pressure {
-  height: 100%;
-  width: 100%;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.wind-speed {
-  height: 100%;
-  width: 100%;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.humidity {
-  height: 100%;
-  width: 100%;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
 .weather-card .second-row {
+  height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
   color: black;
   font-weight: 500;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
+
+.weather-card img {
+  height: 100%;
+  max-width: 50%;
+}
+
+.weather-card>.second-row img {
+  height: 6vh;
+  width: 7vh;
+}
+
+.weather-card>.first-row>h1 {
+  font-size: 7vh;
+}
+
+.weather-card>.second-row span {
+  font-size: 1vw;
+}
+
+.weather-card .rain-prob,
+.wind-speed,
+.humidity {
+  height: 100%;
+  width: 100%;
+  border: 0.1vw solid #1f2222;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex;
+}
+
+
+.humidity {
+  border-radius: 0;
+}
+
+.rain-prob {
+  border-bottom-left-radius: 20%;
+  border-bottom-right-radius: 0;
+}
+
+.wind-speed {
+  border-right-width: 0;
+}
+
 
 /* Mini weather cards style */
 
@@ -394,11 +436,22 @@ WeatherReport>.London {
   display: flex;
   height: 100%;
   width: 100%;
-  justify-content: space-evenly;
+  align-items: center;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .mini-weather-card h1 {
-  font-size: small;
+  font-size: 1vw;
+}
+
+.mini-weather-card>.first-row {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
 }
 
 .mini-weather-card>.second-row {
@@ -406,6 +459,27 @@ WeatherReport>.London {
   height: 100%;
   width: 100%;
   justify-content: space-around;
+  font-size: 1vw;
+}
+
+.mini-weather-card>.first-row img {
+  height: 100%;
+  width: 80%;
+}
+
+.mini-weather-card>.second-row img {
+  height: 100%;
+  width: 60%;
+}
+
+.first-mini-card {
+  border-top-left-radius: 2vw;
+  border-bottom-left-radius: 2vw;
+}
+
+.last-mini-card {
+  border-top-right-radius: 2vw;
+  border-bottom-right-radius: 2vw;
 }
 
 .rain-prob,

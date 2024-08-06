@@ -12,6 +12,8 @@ function Form(props) {
     const [cityField, setCityField] = useState("");
     const [emailField, setEmailField] = useState("");
     const [phoneNumberField, setPhoneNumberField] = useState("");
+
+    //Validates the fields and enables/disables the button
     useEffect(() => 
     {
         if(!(nameField == "") && !(birthdateField == "") && !(cityField == "") && !(emailField == "") && !(phoneNumberField == ""))

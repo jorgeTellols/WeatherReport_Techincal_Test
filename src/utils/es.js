@@ -19,7 +19,7 @@ const es = {
     dataFormat: "es-ES",
     rainProbSpan: "Probabilidad de lluvia",
     windSpeedSpan: "Velocidad del viento",
-    humiditySpan: "Humedad",
+    humiditySpan: " Porcentaje de humedad",
     serverErrorMessage: "Error del servidor",
     clientErrorMessage: "Error del cliente",
     serverErrorTip: "Por favor intentalo de nuevo más tarde",
