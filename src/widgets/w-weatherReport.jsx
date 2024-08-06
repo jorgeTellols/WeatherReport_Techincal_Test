@@ -48,6 +48,13 @@ function WeatherReport(props) {
     }, [props.selectedCityName]);
 
     useEffect(() => {
+        if((props.languageSelected).dataFormat == "en-US")
+        {
+            language = "en"
+        }
+        else{
+            language = "es"
+        }
         getWeatherReport()
         setCityChanged(false);
     }, [cityChanged, props.languageSelected])
