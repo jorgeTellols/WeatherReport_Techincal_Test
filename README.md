@@ -15,6 +15,7 @@ This is a very simple application to check the weather report from 3 random citi
 
 ## Technologies used
 
+-NodeJS v20.16.0
 - React 
 - JavaScript
 - HTML
