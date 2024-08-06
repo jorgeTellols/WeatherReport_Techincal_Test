@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState} from "react";
-import Button from "./c-button";
+import Button from "../components/c-button";
 
 function Sidebar(props) {
 

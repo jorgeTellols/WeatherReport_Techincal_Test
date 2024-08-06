@@ -1,5 +1,5 @@
 import './App.css';
-import Sidebar from './components/c-sidebar';
+import Sidebar from './widgets/w-sidebar';
 import Button from './components/c-button';
 import WeatherReport from './widgets/w-weatherReport';
 import Form from './modals/m-form';
